@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Lilita+One&display=swap");
+
+:root {
+  --col1: #ffffff;
+  --col2: #000000;
+  --border: 1px solid var(--col2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --col1: #000000;
+    --col2: #ffffff;
+  }
+}
+
+body {
+  background-color: var(--col1);
+  color: var(--col2);
+  font-family: "Lexend", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lexend", Arial, sans-serif;
+}
+
+dialog[open] {
+  background-color: var(--col1);
+  color: var(--col2);
+  border: var(--border);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button {
+  background-color: var(--col2);
+  color: var(--col1);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: "Lexend", Arial, sans-serif;
+}
