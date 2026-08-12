@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 
 :root {
   --col1: #ffffff;
-  --col2: #000000;
+  --col2: #243197;
   --border: 1px solid var(--col2);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --col1: #000000;
+    --col1: #243197;
     --col2: #ffffff;
   }
 }
@@ -30,6 +30,14 @@ h6 {
   font-family: "Lexend", Arial, sans-serif;
 }
 
+dialog {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    display 0.3 allow-discrete;
+}
 dialog[open] {
   background-color: var(--col1);
   color: var(--col2);
@@ -42,6 +50,8 @@ dialog[open] {
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 button {
