@@ -12,6 +12,17 @@ const key = document.getElementById("key-test");
 // create synth
 const synth = new Tone.PolySynth();
 
+// is the user currently holding down the mouse button
+let mouseButtonDown = false;
+// if user holds down mouse button set to true, opposite for false
+window.addEventListener("mousedown", () => {
+  mouseButtonDown = true;
+});
+
+window.addEventListener("mouseup", () => {
+  mouseButtonDown = false;
+});
+
 ////// DIALOG //////
 // open dialog
 introDialog.showModal();
