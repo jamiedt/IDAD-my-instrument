@@ -6,8 +6,11 @@ const introDialogClose = document.getElementById("intro-dialog-close");
 // find test button
 const testButton = document.getElementById("test-button");
 
+// find key button
+const key = document.getElementById("key-test");
+
 // create synth
-const synth = new Tone.Synth();
+const synth = new Tone.PolySynth();
 
 ////// DIALOG //////
 // open dialog
@@ -28,10 +31,19 @@ function toneInit() {
 }
 
 // add event listener to the button
-testButton.addEventListener("click", playNote);
+key.addEventListener("mousedown", startNote);
+key.addEventListener("mouseup", endNote);
+key.addEventListener("mouseleave", endNote);
 
 // function to play note
-function playNote() {
-  // play a note
-  synth.triggerAttackRelease("c4", "8n");
+function startNote(e) {
+  let keyPressed = e.target;
+  let note = keyPressed.dataset.note;
+  synth.triggerAttack(note);
+}
+
+function endNote(e) {
+  let keyPressed = e.target;
+  let note = keyPressed.dataset.note;
+  synth.triggerRelease(note);
 }
